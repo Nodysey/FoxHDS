@@ -1049,6 +1049,7 @@ hr {
   flex-direction: row !important;
   max-width: none !important;
   height: 100% !important;
+  overflow: hidden;
 }
 
 #ldl-location {

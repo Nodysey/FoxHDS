@@ -1,7 +1,7 @@
 export let config = {
-    "networkName": "METEOChannel",
-    "affiliateName": "SSPWXR Media Group",
-    "channelNumber": "sspwxr02",
+    "networkName": "Fox Weather",
+    "affiliateName": "Spark TV",
+    "channelNumber": "1004",
     "debugger": false,
     "videoBackgrounds": false,
     "currentConditionsGradient": true,
