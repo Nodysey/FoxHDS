@@ -1,0 +1,19 @@
+{
+  "name": "weatherhds1",
+  "version": "1.336.0-0",
+  "description": "A basic web app that displays weather from the weather.com API in the style of a 24/7 weather channel broadcast.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "indexbg": "node indexBackgrounds.js"
+  },
+  "keywords": [],
+  "author": "SSPWXR",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
