@@ -1,8 +1,8 @@
-<img src="https://github.com/SSPWXR0/weatherhds1/blob/master/public/images/hdslogo_2024.png">
+<img src="https://github.com/Nodysey/FoxHDS/blob/main/public/images/hdslogo_2024.png">
 <body>
   <h1>WeatherHDS (Weather HTML Display System)</h1>
 
-  <img src="https://github.com/SSPWXR0/weatherhds1/blob/master/public/images/hds_screenshots.jpg">
+  <img src="https://github.com/Nodysey/FoxHDS/blob/main/public/images/screenshot.png">
 
   <h2>Present continuous weather data on display screens, with easy deployment and free and open source software.</h2>
   <p>WeatherHDS is a Node.JS app that simplifies the presentation of modern and updated weather graphics on digital displays or other types of broadcasts. Designed with modularity and infinite customizability in mind, thanks to WeatherHDS's simplified
