@@ -2,7 +2,7 @@
 <body>
   <h1>FoxHDS (Fork of WeatherHDS)</h1>
 
-  <img src="https://github.com/Nodysey/FoxHDS/blob/main/public/images/screenshot.png" style="max-width: 40%">
+  <img src="https://github.com/Nodysey/FoxHDS/blob/main/public/images/screenshot.png">
 
   <h2>Present continuous weather data on display screens, with easy deployment and free and open source software.</h2>
   <p>WeatherHDS is a Node.JS app that simplifies the presentation of modern and updated weather graphics on digital displays or other types of broadcasts. Designed with modularity and infinite customizability in mind, thanks to WeatherHDS's simplified

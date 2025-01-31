@@ -18,11 +18,11 @@ const serverConfig = {
       "Mount Holly"
     ],
     "ldlLocations": [
-      "CHERRY HILL",
-      "MOUNT LAUREL",
-      "VOORHEES",
-      "CAMDEN",
-      "MOUNT HOLLY"
+      "Cherry Hill, NJ",
+      "Mount Laurel, NJ",
+      "Voorhees, NJ",
+      "Camden, NJ",
+      "Mount Holly, NJ"
     ],
   },
 

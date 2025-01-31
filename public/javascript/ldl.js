@@ -90,7 +90,7 @@ async function LDLData() {
         
                 currentTemp.innerHTML = `${latestData.current.temperature}${endingTemp}`
                 currentCondition.innerHTML = latestData.current.wxPhraseMedium
-                currentWind.innerHTML = `${latestData.current.windDirectionCardinal}, ${latestData.current.windSpeed}${endingWind}`
+                currentWind.innerHTML = `${latestData.current.windDirectionCardinal} ${latestData.current.windSpeed}${endingWind}`
                 currentHumidity.innerHTML = `${latestData.current.relativeHumidity}%`
                 currentDewpoint.innerHTML = `${latestData.current.temperatureDewPoint}${endingTemp}`
                 currentPressure.innerHTML = `${latestData.current.pressureAltimeter}${endingPressure}`
@@ -105,7 +105,7 @@ async function LDLData() {
                 let ceilingFormatted;
     
                 if (latestData.current.cloudCeiling === null) {
-                    ceilingFormatted = "Unlimited"
+                    ceilingFormatted = 'Unlimited'
                 } else {
                     ceilingFormatted = `${latestData.current.cloudCeiling}${endingCeiling}`
                 }

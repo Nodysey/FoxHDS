@@ -773,6 +773,9 @@ hr {
 .ldl-locationlabel-container {
   width: 32%;
   height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 #ldl-location-label {
@@ -786,7 +789,7 @@ hr {
 }
 
 .ldltext-primary {
-  font-size: 14pt;
+  font-size: 12pt;
   align-self: center;
   margin-right: 10px;
   text-wrap: nowrap;
@@ -808,19 +811,19 @@ hr {
 
 #ldl-current {
   position: relative;
-  width: 90%;
+  width: 100%;
 }
 
 #ldl-forecast {
   position: relative;
   display: none;
-  width: 70%;
+  width: 100%;
 }
 
 #ldl-aqi {
   position: relative;
   display: block;
-  width: 65%;
+  width: 100%;
   display: none;
 }
 
@@ -888,16 +891,21 @@ hr {
 }
 
 .ldl-current-module {
-  display: none;
+  display: flex;
   justify-content: space-between;
   margin-left: 5px;
   line-height: 1;
   font-size: 8pt;
-  width: 90%;
+  width: 100%;
   flex-grow: 3;
   font-weight: 300;
   align-self: center;
   margin-right: 5px;
+}
+
+.ldl-current-module div, .ldl-current-wind {
+  display: flex;
+  flex-direction: row;
 }
 
 #ldl-current-module2 {
@@ -909,6 +917,8 @@ hr {
 
 .module-value {
   font-weight: 500;
+  display: flex;
+  align-self: center;
 }
 
 
@@ -1057,12 +1067,11 @@ hr {
 
 #ldl-location-label {
   font-size: 12pt !important;
-  font-weight: bold !important;
+  font-weight: 600 !important;
   text-align: center !important;
-  width: 100% !important;
+  /*width: 100% !important;*/
   margin: 0 !important;
   position: relative;
-  top: -1.5px;
 }
 
 .ldl-weather {
@@ -1106,10 +1115,28 @@ hr {
   display: none !important;
 }
 
-.ldltext-secondary #ldl-forecast-day0-pop-value, .ldltext-secondary #ldl-forecast-day1-pop-value {
+#ldl-forecast-day0-pop-value, #ldl-forecast-day1-pop-value {
   display: none !important;
 }
 
-.cc-label {
+#cc-label {
   font-size: 12pt !important;
+  font-weight: 600;
+}
+
+#ldl-current-wind-label {
+  display: none;
+}
+
+.icon {
+  padding: 3px;
+}
+
+.icon-cc {
+  margin: 2px 0;
+}
+
+#ldl-current-temp {
+  position: relative;
+  left: -10%;
 }
