@@ -4,8 +4,8 @@ import { locationsList } from './dataLoader.js';
 
 const ldlPresentationSlides = {
     "0": { htmlID: "ldl-current", durationMS: "20000" },
-    "1": { htmlID: "ldl-forecast", durationMS: "20000" },
-    "2": { htmlID: "ldl-aqi", durationMS: "5000" },
+    "1": { htmlID: "ldl-forecast", durationMS: "15000" },
+    "2": { htmlID: "ldl-extended", durationMS: "10000" },
 }
 
 let totalDuration = 0;
@@ -159,6 +159,45 @@ async function LDLData() {
     
     
               }
+              
+              const forecastData = latestData.weekly;
+
+              function appendExtended() {
+                const extended0Name = document.getElementById('ldl-extended-day0-name');
+                const extended0Icon = document.getElementById('ldl-day0-icon');
+                const extended0Temp = document.getElementById('ldl-extended-day0-temp');
+                const extended1Name = document.getElementById('ldl-extended-day1-name');
+                const extended1Icon = document.getElementById('ldl-day1-icon');
+                const extended1Temp = document.getElementById('ldl-extended-day1-temp');
+                const extended2Name = document.getElementById('ldl-extended-day2-name');
+                const extended2Icon = document.getElementById('ldl-day2-icon');
+                const extended2Temp = document.getElementById('ldl-extended-day2-temp');
+
+                const now = new Date();
+                const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+                extended0Name.innerHTML = days[(now.getDay() + 1) % 7];
+                extended1Name.innerHTML = days[(now.getDay() + 2) % 7];
+                extended2Name.innerHTML = days[(now.getDay() + 3) % 7];
+    
+                extended0Temp.innerHTML = `<sb>${latestData.forecast.daypart[0].temperature[2]}°</sb> ​ ${latestData.forecast.daypart[0].temperature[3]}°`
+                extended1Temp.innerHTML = `<sb>${latestData.forecast.daypart[0].temperature[4]}°</sb> ​ ${latestData.forecast.daypart[0].temperature[5]}°`
+                extended2Temp.innerHTML = `<sb>${latestData.forecast.daypart[0].temperature[6]}°</sb>  ${latestData.forecast.daypart[0].temperature[7]}°`
+    
+                const dayOneIconCode = latestData.forecast.daypart[0].iconCode[0] ?? latestData.forecast.daypart[0].iconCode[1];
+                const dayOrNight = latestData.forecast.daypart[0].dayOrNight[0] ?? latestData.forecast.daypart[0]?.dayOrNight[1];
+                const iconPath = weatherIcons[dayOneIconCode] ? weatherIcons[dayOneIconCode][dayOrNight === "D" ? 0 : 1] : 'not-available.svg'
+                extended0Icon.src = `/graphics/${iconDir}/${iconPath}`
+
+                function setDayIcon(day, daypartIndex) {
+                    const iconCode = latestData.forecast.daypart[0].iconCode[daypartIndex];
+                    const dayOrNight = latestData.forecast.daypart[0].dayOrNight[daypartIndex];
+                    const iconPath = weatherIcons[iconCode] ? weatherIcons[iconCode][dayOrNight === "D" ? 0 : 1] : 'not-available.svg';
+                    day.src = `/graphics/${iconDir}/${iconPath}`;
+                }
+                setDayIcon(extended0Icon, 2);
+                setDayIcon(extended1Icon, 4);
+                setDayIcon(extended2Icon, 6);
+              }
     
               function appendAirQuality() {
                 const aqiStatus = document.getElementById('ldl-aqi-status');
@@ -173,6 +212,7 @@ async function LDLData() {
         
             appendCurrent()
             appendForecast()
+            appendExtended()
             appendAirQuality()
             
             } else {
